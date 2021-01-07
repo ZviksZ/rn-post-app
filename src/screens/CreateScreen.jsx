@@ -1,10 +1,10 @@
 import React    from 'react';
 import {View, Text, StyleSheet} from "react-native";
 
-export const MainScreen = ({}) => {
+export const CreateScreen = ({}) => {
    return (
       <View style={styles.center}>
-         <Text>MainScreen</Text>
+         <Text>CreateScreen</Text>
       </View>
    );
 }

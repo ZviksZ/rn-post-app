@@ -1,10 +1,10 @@
 import React    from 'react';
 import {View, Text, StyleSheet} from "react-native";
 
-export const PostScreen = ({}) => {
+export const AboutScreen = ({}) => {
    return (
       <View style={styles.center}>
-         <Text>PostScreen</Text>
+         <Text>AboutScreen</Text>
       </View>
    );
 }
