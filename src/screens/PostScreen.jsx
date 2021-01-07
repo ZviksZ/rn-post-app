@@ -1,7 +1,9 @@
-import React                                         from 'react';
+import React, {useEffect}                                                       from 'react';
 import {View, StyleSheet, Image, Button, ScrollView, Alert, Text } from "react-native";
-import {DATA}                                        from "../data.js";
-import {THEME}                                       from "../theme.js";
+import {HeaderButtons, Item}                                       from "react-navigation-header-buttons";
+import {AppHeaderIcon}                                             from "../components/AppHeaderIcon.jsx";
+import {DATA}                                                      from "../data.js";
+import {THEME}                                                     from "../theme.js";
 
 export const PostScreen = ({navigation}) => {
    const postId = navigation.getParam('postId')
@@ -36,8 +38,13 @@ export const PostScreen = ({navigation}) => {
 
 PostScreen.navigationOptions = ({navigation}) => {
    const date = navigation.getParam('date')
+   const booked = navigation.getParam('booked')
+   const iconName = booked ? 'ios-star' : 'ios-star-outline'
    return {
       headerTitle: 'Пост от ' + new Date(date).toLocaleDateString(),
+      headerRight: <HeaderButtons HeaderButtonComponent={AppHeaderIcon}>
+         <Item title="Take photo" iconName={iconName} onPress={() => console.log('PRess photo')}/>
+      </HeaderButtons>,
    }
 }
 
