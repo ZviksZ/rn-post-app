@@ -1,16 +1,17 @@
-import React                 from 'react';
-import {AppHeaderIcon}       from "../components/AppHeaderIcon.jsx";
-import {PostList}            from "../components/PostList.jsx";
-import {DATA}                from "../data.js";
-import {HeaderButtons, Item} from 'react-navigation-header-buttons'
-import {AboutScreen}         from "./AboutScreen.jsx";
+import React                      from 'react';
+import {useSelector} from "react-redux";
+import {AppHeaderIcon}            from "../components/AppHeaderIcon.jsx";
+import {PostList}                 from "../components/PostList.jsx";
+import {HeaderButtons, Item}      from 'react-navigation-header-buttons'
 
 export const BookedScreen = ({navigation}) => {
+   const bookedPosts = useSelector(state => state.post.bookedPosts)
+
    const openPostHandler = post => {
       navigation.navigate('Post', {postId: post.id, date: post.date, booked: post.booked})
    }
 
-   return <PostList onOpen={openPostHandler} data={DATA.filter(post => post.booked)}/>
+   return <PostList onOpen={openPostHandler} data={bookedPosts}/>
 }
 
 BookedScreen.navigationOptions = ({navigation}) => ({
