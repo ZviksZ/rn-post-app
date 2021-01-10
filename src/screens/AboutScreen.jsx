@@ -14,7 +14,7 @@ export const AboutScreen = ({}) => {
 
 AboutScreen.navigationOptions = ({navigation}) => ({
    headerTitle: 'О приложении',
-   headerLeft: <HeaderButtons HeaderButtonComponent={AppHeaderIcon}>
+   headerLeft: () => <HeaderButtons HeaderButtonComponent={AppHeaderIcon}>
       <Item title="Toggle drawer" iconName="ios-menu" onPress={() => navigation.toggleDrawer()}/>
    </HeaderButtons>
 })
