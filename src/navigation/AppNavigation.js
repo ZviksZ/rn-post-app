@@ -32,6 +32,14 @@ const BookedNavigator = createStackNavigator({
    Post: PostScreen
 }, navigatorOptions)
 
+const AboutNavigator = createStackNavigator({
+   About: AboutScreen
+}, navigatorOptions)
+
+const CreateNavigator = createStackNavigator({
+   Create: CreateScreen
+}, navigatorOptions)
+
 const bottomTabsConfig = {
    Post: {
       screen: PostNavigator,
@@ -61,13 +69,7 @@ const BottomNavigator = Platform.OS === 'android' ? createMaterialBottomTabNavig
    }
 })
 
-const AboutNavigator = createStackNavigator({
-   About: AboutScreen
-}, navigatorOptions)
 
-const CreateNavigator = createStackNavigator({
-   Create: CreateScreen
-}, navigatorOptions)
 
 const MainNavigator = createDrawerNavigator({
    PostTabs: {

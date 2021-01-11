@@ -30,7 +30,7 @@ export const MainScreen = ({navigation}) => {
 }
 
 MainScreen.navigationOptions = ({navigation}) => ({
-   headerTitle: 'Мой блог',
+   headerTitle: 'Мой блог!',
    headerRight: () => <HeaderButtons HeaderButtonComponent={AppHeaderIcon}>
       <Item title="Take photo" iconName="ios-camera" onPress={() => navigation.push('Create')}/>
    </HeaderButtons>,
